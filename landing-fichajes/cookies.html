@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Política de Cookies | Sistema de Fichaje Digital</title>
+
+<meta name="robots" content="noindex, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*, *::before, *::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --azul:#1a4fd6;
+  --azul-oscuro:#0f1b2d;
+  --texto:#122033;
+  --texto-suave:#556070;
+  --fondo:#f5f7fc;
+  --blanco:#ffffff;
+  --borde:#dfe7f3;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--fondo);
+  color:var(--texto);
+  line-height:1.7;
+}
+
+/* NAV */
+
+nav{
+  height:70px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--borde);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5%;
+}
+
+.logo{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:1.1rem;
+  text-decoration:none;
+  color:var(--azul);
+}
+
+.logo span{
+  color:var(--texto);
+}
+
+.back-link{
+  text-decoration:none;
+  color:var(--texto-suave);
+  font-size:0.92rem;
+  transition:0.2s;
+}
+
+.back-link:hover{
+  color:var(--azul);
+}
+
+/* HERO */
+
+.hero{
+  background:linear-gradient(135deg,#0f1b2d 0%, #1d3f75 100%);
+  padding:60px 5% 55px;
+  text-align:center;
+}
+
+.hero-badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  color:#a8c7ff;
+  font-size:0.8rem;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2rem,4vw,2.8rem);
+  color:white;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:rgba(255,255,255,0.65);
+  font-size:0.95rem;
+}
+
+/* CONTENIDO */
+
+.wrapper{
+  max-width:900px;
+  margin:50px auto 80px;
+  padding:0 5%;
+}
+
+.card{
+  background:var(--blanco);
+  border:1px solid var(--borde);
+  border-radius:20px;
+  padding:50px;
+  box-shadow:0 10px 40px rgba(15,27,45,0.04);
+}
+
+.section{
+  margin-bottom:40px;
+}
+
+.section:last-child{
+  margin-bottom:0;
+}
+
+.section h2{
+  font-family:'Syne',sans-serif;
+  color:var(--azul);
+  font-size:1.1rem;
+  margin-bottom:14px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--borde);
+}
+
+.section p{
+  color:var(--texto-suave);
+  font-size:0.96rem;
+  margin-bottom:14px;
+}
+
+.section ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.section ul li{
+  position:relative;
+  padding-left:22px;
+  margin-bottom:12px;
+  color:var(--texto-suave);
+  font-size:0.95rem;
+}
+
+.section ul li::before{
+  content:'→';
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--azul);
+}
+
+.highlight{
+  background:#eef4ff;
+  border:1px solid #d8e4ff;
+  border-radius:14px;
+  padding:18px 20px;
+  margin-top:18px;
+}
+
+.highlight strong{
+  color:var(--azul);
+}
+
+.update{
+  text-align:center;
+  margin-top:35px;
+  color:var(--texto-suave);
+  font-size:0.82rem;
+}
+
+/* FOOTER */
+
+footer{
+  background:var(--azul-oscuro);
+  color:rgba(255,255,255,0.55);
+  text-align:center;
+  padding:26px 5%;
+  font-size:0.85rem;
+}
+
+footer a{
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;
+}
+
+@media(max-width:700px){
+
+  .card{
+    padding:30px 24px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+  <a href="https://plantillasweb.netlify.app" class="logo">
+    Plantillas<span>Web</span>
+  </a>
+
+  <a href="./index.html" class="back-link">
+    ← Volver a la landing
+  </a>
+
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+
+  <div class="hero-badge">
+    Información sobre cookies
+  </div>
+
+  <h1>Política de Cookies</h1>
+
+  <p>
+    Sistema de Fichaje Digital · Información transparente sobre el uso de cookies
+  </p>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="wrapper">
+
+  <div class="card">
+
+    <!-- INTRO -->
+
+    <div class="section">
+
+      <h2>1. ¿Qué son las cookies?</h2>
+
+      <p>
+        Las cookies son pequeños archivos de texto que se almacenan en el navegador del usuario cuando visita un sitio web.
+      </p>
+
+      <p>
+        Su finalidad principal es permitir el correcto funcionamiento de la página, mejorar la experiencia de navegación y recopilar información estadística anónima.
+      </p>
+
+    </div>
+
+    <!-- TIPOS -->
+
+    <div class="section">
+
+      <h2>2. Tipos de cookies utilizadas</h2>
+
+      <p>
+        Este sitio web utiliza únicamente las cookies necesarias para garantizar el correcto funcionamiento de la plataforma.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Cookies técnicas:</strong> necesarias para el funcionamiento básico del sitio web y recordar preferencias esenciales.
+        </li>
+
+        <li>
+          <strong>Cookies de almacenamiento local:</strong> utilizadas para recordar la aceptación o rechazo del banner de cookies.
+        </li>
+
+      </ul>
+
+      <div class="highlight">
+        <strong>Importante:</strong> este sitio no utiliza cookies publicitarias ni vende información personal a terceros.
+      </div>
+
+    </div>
+
+    <!-- FINALIDAD -->
+
+    <div class="section">
+
+      <h2>3. Finalidad de las cookies</h2>
+
+      <ul>
+        <li>Garantizar el funcionamiento correcto del sitio web.</li>
+        <li>Recordar las preferencias del usuario.</li>
+        <li>Mejorar la experiencia de navegación.</li>
+        <li>Evitar mostrar repetidamente el banner de cookies.</li>
+      </ul>
+
+    </div>
+
+    <!-- GESTION -->
+
+    <div class="section">
+
+      <h2>4. Gestión y desactivación de cookies</h2>
+
+      <p>
+        El usuario puede configurar su navegador para permitir, bloquear o eliminar las cookies instaladas en su dispositivo.
+      </p>
+
+      <p>
+        La desactivación de determinadas cookies puede afectar al correcto funcionamiento del sitio web.
+      </p>
+
+      <ul>
+        <li>Google Chrome</li>
+        <li>Mozilla Firefox</li>
+        <li>Microsoft Edge</li>
+        <li>Safari</li>
+      </ul>
+
+    </div>
+
+    <!-- TERCEROS -->
+
+    <div class="section">
+
+      <h2>5. Cookies de terceros</h2>
+
+      <p>
+        Actualmente este sitio web no utiliza servicios externos que instalen cookies publicitarias o de seguimiento avanzado.
+      </p>
+
+      <p>
+        En caso de incorporar herramientas externas como Google Analytics o plataformas publicitarias, esta política será actualizada debidamente.
+      </p>
+
+    </div>
+
+    <!-- MODIFICACIONES -->
+
+    <div class="section">
+
+      <h2>6. Modificaciones de esta política</h2>
+
+      <p>
+        El titular se reserva el derecho a modificar la presente Política de Cookies para adaptarla a novedades legislativas o técnicas.
+      </p>
+
+      <p>
+        Se recomienda revisar esta página periódicamente.
+      </p>
+
+    </div>
+
+    <!-- CONTACTO -->
+
+    <div class="section">
+
+      <h2>7. Contacto</h2>
+
+      <p>
+        Para cualquier duda relacionada con esta Política de Cookies puede contactar a través del correo:
+      </p>
+
+      <div class="highlight">
+        <strong>Email:</strong> chhc72@gmail.com
+      </div>
+
+    </div>
+
+    <div class="update">
+      Última actualización: mayo de 2026
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>
+    © 2026 Plantillas Web Modernas ·
+    <a href="https://plantillasweb.netlify.app">
+      plantillasweb.netlify.app
+    </a>
+  </p>
+</footer>
+
+</body>
+</html>

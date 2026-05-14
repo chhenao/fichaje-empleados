@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviso Legal | Sistema de Fichaje Digital</title>
+<meta name="robots" content="noindex, follow">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --azul: #1a4fd6;
+    --azul-claro: #e8efff;
+    --texto: #0f1b2d;
+    --texto-suave: #4a5568;
+    --borde: #dde4f0;
+    --blanco: #ffffff;
+    --fondo: #f7f9ff;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--borde);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.1rem;
+    color: var(--azul); text-decoration: none;
+  }
+  .nav-logo span { color: var(--texto); }
+  .nav-back {
+    font-size: 0.9rem; color: var(--texto-suave);
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--azul); }
+
+  /* CABECERA */
+  .cabecera {
+    background: linear-gradient(135deg, #0f1b2d 0%, #1a3a6e 100%);
+    padding: 56px 5% 52px;
+    text-align: center;
+  }
+  .cabecera-label {
+    display: inline-block;
+    background: rgba(255,255,255,0.12); color: #a5c8ff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 14px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: 500; margin-bottom: 16px;
+  }
+  .cabecera h1 {
+    font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800; color: white; letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .cabecera p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+  /* CONTENIDO */
+  .contenido-wrap {
+    max-width: 820px; margin: 48px auto 80px;
+    padding: 0 5%;
+  }
+  .aviso-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 48px 52px;
+  }
+
+  .seccion { margin-bottom: 36px; }
+  .seccion:last-child { margin-bottom: 0; }
+
+  .seccion h2 {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 1.05rem; color: var(--azul);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--borde);
+  }
+  .seccion p { color: var(--texto-suave); font-size: 0.95rem; margin-bottom: 10px; }
+  .seccion p:last-child { margin-bottom: 0; }
+  .seccion ul { padding-left: 0; list-style: none; }
+  .seccion ul li {
+    color: var(--texto-suave); font-size: 0.95rem;
+    padding: 5px 0 5px 20px; position: relative;
+  }
+  .seccion ul li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--azul); font-size: 0.8rem; top: 7px;
+  }
+
+  .dato-empresa {
+    background: var(--fondo); border: 1px solid var(--borde);
+    border-radius: 10px; padding: 20px 24px; margin-top: 16px;
+  }
+  .dato-fila {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 0; border-bottom: 1px solid var(--borde);
+    font-size: 0.9rem;
+  }
+  .dato-fila:last-child { border-bottom: none; }
+  .dato-key { color: var(--texto-suave); font-weight: 500; }
+  .dato-val { color: var(--texto); font-weight: 500; }
+
+  .actualizacion {
+    text-align: center; margin-top: 32px;
+    color: var(--texto-suave); font-size: 0.82rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0f1b2d; color: rgba(255,255,255,0.5);
+    text-align: center; padding: 24px 5%; font-size: 0.85rem;
+  }
+  footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .aviso-card { padding: 28px 24px; }
+    .dato-fila { flex-direction: column; align-items: flex-start; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://plantillasweb.netlify.app" class="nav-logo">Plantillas<span>Web</span></a>
+  <a href="./index.html" class="nav-back">← Volver a la landing</a>
+</nav>
+
+<!-- CABECERA -->
+<div class="cabecera">
+  <div class="cabecera-label">Información legal</div>
+  <h1>Aviso Legal</h1>
+  <p>Sistema de Fichaje Digital · Plantillas Web Modernas</p>
+</div>
+
+<!-- CONTENIDO -->
+<div class="contenido-wrap">
+  <div class="aviso-card">
+
+    <!-- 1. TITULAR -->
+    <div class="seccion">
+      <h2>1. Datos del titular</h2>
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos identificativos:</p>
+      <div class="dato-empresa">
+        <div class="dato-fila"><span class="dato-key">Titular</span><span class="dato-val">Plantillas Web Modernas</span></div>
+        <div class="dato-fila"><span class="dato-key">Correo electrónico</span><span class="dato-val">chhc72@gmail.com</span></div>
+        <div class="dato-fila"><span class="dato-key">WhatsApp</span><span class="dato-val">+34 622 675 828</span></div>
+        <div class="dato-fila"><span class="dato-key">Sitio web</span><span class="dato-val">plantillasweb.netlify.app</span></div>
+        <div class="dato-fila"><span class="dato-key">País</span><span class="dato-val">España</span></div>
+      </div>
+    </div>
+
+    <!-- 2. OBJETO -->
+    <div class="seccion">
+      <h2>2. Objeto y ámbito de aplicación</h2>
+      <p>El presente Aviso Legal regula el acceso y uso de la página de presentación del <strong>Sistema de Fichaje Digital</strong>, disponible en este sitio web, así como la relación comercial derivada de la adquisición de dicho producto o servicio.</p>
+      <p>El acceso a esta página implica la aceptación plena y sin reservas de las condiciones aquí expuestas. El titular se reserva el derecho a modificar estas condiciones en cualquier momento, siendo responsabilidad del usuario revisarlas periódicamente.</p>
+    </div>
+
+    <!-- 3. PRODUCTO -->
+    <div class="seccion">
+      <h2>3. Descripción del producto</h2>
+      <p>El Sistema de Fichaje Digital es un producto de software (plantilla) desarrollado en PHP y MySQL que permite a empresas gestionar el control horario de sus empleados de forma digital.</p>
+      <p>Se comercializa en dos modalidades:</p>
+      <ul>
+        <li><strong>Plantilla:</strong> entrega del código fuente para instalación autónoma por el comprador.</li>
+        <li><strong>Instalado y configurado:</strong> el titular realiza la instalación y configuración en el servidor del cliente.</li>
+      </ul>
+      <p>La demo disponible en este sitio es únicamente orientativa y puede diferir de la versión final entregada al cliente.</p>
+    </div>
+
+    <!-- 4. CONDICIONES DE COMPRA -->
+    <div class="seccion">
+      <h2>4. Condiciones de compra y entrega</h2>
+      <ul>
+        <li>El pago se realiza mediante los métodos indicados al formalizar el pedido (tarjeta, PayPal u otros).</li>
+        <li>Una vez confirmado el pago, se procederá a la entrega del código fuente o a la instalación según la modalidad contratada.</li>
+        <li>No se admiten devoluciones una vez entregado el código fuente o iniciada la instalación.</li>
+        <li>El soporte técnico incluido tiene una duración de 3 meses desde la fecha de entrega, salvo indicación distinta en la oferta.</li>
+        <li>El titular no se responsabiliza del funcionamiento del sistema en servidores de terceros que no cumplan los requisitos mínimos (PHP 7.4+, MySQL 5.7+).</li>
+      </ul>
+    </div>
+
+    <!-- 5. PROPIEDAD INTELECTUAL -->
+    <div class="seccion">
+      <h2>5. Propiedad intelectual</h2>
+      <p>El código fuente, diseño y contenidos del Sistema de Fichaje Digital son propiedad del titular o dispone de los derechos de uso correspondientes.</p>
+      <p>La adquisición del producto otorga al comprador una <strong>licencia de uso no exclusiva</strong> para un único proyecto o empresa. Queda expresamente prohibido:</p>
+      <ul>
+        <li>Revender, sublicenciar o redistribuir el código fuente a terceros.</li>
+        <li>Utilizar el producto como base para crear y comercializar un producto derivado sin autorización expresa.</li>
+        <li>Eliminar los avisos de autoría del código.</li>
+      </ul>
+    </div>
+
+    <!-- 6. PROTECCIÓN DE DATOS -->
+    <div class="seccion">
+      <h2>6. Protección de datos personales</h2>
+      <p>En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa que los datos personales facilitados a través de este sitio (nombre, correo electrónico, teléfono) serán tratados por el titular con la finalidad de gestionar las consultas y pedidos recibidos.</p>
+      <p>Los datos no serán cedidos a terceros salvo obligación legal. El usuario puede ejercer sus derechos de acceso, rectificación, supresión y portabilidad escribiendo a <strong>chhc72@gmail.com</strong>.</p>
+    </div>
+
+    <!-- 7. COOKIES -->
+    <div class="seccion">
+      <h2>7. Política de cookies</h2>
+      <p>Esta página puede utilizar cookies técnicas necesarias para su correcto funcionamiento. No se emplean cookies de seguimiento ni publicitarias sin el consentimiento previo del usuario.</p>
+    </div>
+
+    <!-- 8. LEGISLACIÓN -->
+    <div class="seccion">
+      <h2>8. Legislación aplicable y jurisdicción</h2>
+      <p>Las presentes condiciones se rigen por la legislación española vigente. Para la resolución de cualquier controversia derivada del acceso o uso de este sitio web, las partes se someten a los Juzgados y Tribunales del domicilio del titular, salvo que la normativa aplicable establezca un fuero imperativo distinto.</p>
+    </div>
+
+    <div class="actualizacion">Última actualización: mayo de 2026</div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Plantillas Web Modernas · <a href="https://plantillasweb.netlify.app">plantillasweb.netlify.app</a></p>
+</footer>
+
+</body>
+</html>

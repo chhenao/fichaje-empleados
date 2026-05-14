@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fichaje Digital para Empresas | Plantillas Web Modernas</title>
+<meta name="description" content="Sistema de fichaje digital para empresas. Conforme al registro horario obligatorio en España. Prueba la demo gratis.">
+<meta property="og:title" content="Fichaje Digital para Empresas | Plantillas Web Modernas">
+<meta property="og:description" content="Gestiona el fichaje de tus empleados desde cualquier dispositivo. Sin cuotas mensuales.">
+<meta property="og:url" content="https://plantillasweb.netlify.app/fichaje/">
+<link rel="stylesheet" href="css/cookies.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --azul: #1a4fd6;
+    --azul-claro: #e8efff;
+    --azul-medio: #3b6ef5;
+    --texto: #0f1b2d;
+    --texto-suave: #4a5568;
+    --borde: #dde4f0;
+    --blanco: #ffffff;
+    --fondo: #f7f9ff;
+    --verde: #16a34a;
+    --verde-claro: #dcfce7;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'a', sans-serif;
+    color: var(--texto);
+    background: var(--blanco);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--borde);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.1rem;
+    color: var(--azul); text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .nav-logo span { color: var(--texto); }
+  .nav-cta {
+    background: var(--azul); color: white;
+    padding: 8px 20px; border-radius: 8px;
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #1340b0; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0f1b2d 0%, #1a3a6e 50%, #1a4fd6 100%);
+    padding: 80px 5% 90px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(59,110,245,0.3) 0%, transparent 60%);
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.12); color: #a5c8ff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 14px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: 500; margin-bottom: 20px;
+  }
+  .hero-badge::before { content: '●'; font-size: 0.5rem; color: #4ade80; }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; color: white;
+    line-height: 1.15; margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+  .hero h1 span {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    background-clip: text; -webkit-background-clip: text;
+    color: transparent;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.75); font-size: 1.05rem;
+    margin-bottom: 32px; max-width: 480px;
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: white; color: var(--azul);
+    padding: 14px 28px; border-radius: 10px;
+    text-decoration: none; font-weight: 600; font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+  .btn-secondary {
+    background: transparent; color: white;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    padding: 14px 28px; border-radius: 10px;
+    text-decoration: none; font-weight: 500; font-size: 1rem;
+    display: flex; align-items: center; gap: 8px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+  /* MOCKUP */
+  .hero-mockup {
+    background: white; border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+  .mock-header {
+    background: var(--azul); padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .mock-header-title { color: white; font-weight: 600; font-size: 0.9rem; }
+  .mock-dots { display: flex; gap: 5px; }
+  .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .mock-dot.r { background: #ff5f57; }
+  .mock-dot.y { background: #febc2e; }
+  .mock-dot.g { background: #28c840; }
+  .mock-body { padding: 20px; }
+  .mock-empleado {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+    padding: 12px; border-radius: 10px; background: var(--fondo);
+    border: 1px solid var(--borde);
+  }
+  .mock-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--azul-claro); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--azul); font-size: 0.85rem; flex-shrink: 0;
+  }
+  .mock-emp-info { flex: 1; min-width: 0; }
+  .mock-emp-nombre { font-weight: 600; font-size: 0.85rem; }
+  .mock-emp-rol { color: var(--texto-suave); font-size: 0.75rem; }
+  .mock-status {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 0.75rem; font-weight: 600;
+    padding: 4px 10px; border-radius: 20px; white-space: nowrap;
+  }
+  .mock-status.activo { background: var(--verde-claro); color: var(--verde); }
+  .mock-status.activo::before { content: '●'; font-size: 0.5rem; }
+  .mock-status.ausente { background: #fee2e2; color: #dc2626; }
+  .mock-status.ausente::before { content: '●'; font-size: 0.5rem; }
+  .mock-stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px;
+  }
+  .mock-stat {
+    background: var(--fondo); border: 1px solid var(--borde);
+    border-radius: 8px; padding: 10px; text-align: center;
+  }
+  .mock-stat-num { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--azul); }
+  .mock-stat-lbl { font-size: 0.65rem; color: var(--texto-suave); }
+  .mock-btn-fichar {
+    width: 100%; background: var(--azul); color: white;
+    border: none; padding: 12px; border-radius: 10px;
+    font-weight: 600; font-size: 0.9rem; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* LOGOS */
+  .logos-strip {
+    background: var(--fondo); border-bottom: 1px solid var(--borde);
+    padding: 20px 5%; text-align: center;
+  }
+  .logos-strip p { color: var(--texto-suave); font-size: 0.8rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .logos-list { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .logo-pill {
+    background: white; border: 1px solid var(--borde);
+    border-radius: 6px; padding: 6px 16px;
+    font-size: 0.8rem; font-weight: 600; color: var(--texto-suave);
+  }
+
+  /* SECCIONES */
+  section { max-width: 1100px; margin: 0 auto; padding: 80px 5%; }
+  .section-label {
+    display: inline-block;
+    background: var(--azul-claro); color: var(--azul);
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  h2.section-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    letter-spacing: -0.5px; margin-bottom: 12px;
+  }
+  .section-sub { color: var(--texto-suave); font-size: 1rem; max-width: 540px; margin-bottom: 48px; }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+  }
+  .feature-card {
+    background: var(--blanco); border: 1px solid var(--borde);
+    border-radius: 14px; padding: 28px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .feature-card:hover { border-color: var(--azul-medio); transform: translateY(-3px); }
+  .feat-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--azul-claro); display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 16px;
+  }
+  .feature-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .feature-card p { color: var(--texto-suave); font-size: 0.9rem; line-height: 1.6; }
+
+  /* CÓMO FUNCIONA */
+  .como-section { background: var(--fondo); }
+  .como-inner { max-width: 1100px; margin: 0 auto; padding: 80px 5%; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .step { text-align: center; padding: 32px 20px; }
+  .step-num {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--azul); color: white;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .step h3 { font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 8px; }
+  .step p { color: var(--texto-suave); font-size: 0.9rem; }
+
+  /* PRECIOS */
+  .precio-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;
+  }
+  .precio-card {
+    border: 1px solid var(--borde); border-radius: 16px; padding: 36px;
+    transition: border-color 0.2s;
+  }
+  .precio-card.destacado {
+    border: 2px solid var(--azul);
+    position: relative; overflow: hidden;
+  }
+  .precio-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: var(--azul); color: white;
+    font-size: 0.72rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;
+  }
+  .precio-label { font-size: 0.8rem; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.5px; }
+  .precio-num {
+    font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800;
+    line-height: 1.1; margin: 8px 0 4px;
+  }
+  .precio-num sup { font-size: 1.2rem; vertical-align: super; }
+  .precio-freq { color: var(--texto-suave); font-size: 0.85rem; margin-bottom: 24px; }
+  .precio-lista { list-style: none; margin-bottom: 28px; }
+  .precio-lista li {
+    padding: 6px 0; font-size: 0.9rem; color: var(--texto-suave);
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--borde);
+  }
+  .precio-lista li:last-child { border-bottom: none; }
+  .precio-lista li::before { content: '✓'; color: var(--verde); font-weight: 700; flex-shrink: 0; }
+  .btn-precio {
+    display: block; text-align: center; padding: 13px;
+    border-radius: 10px; font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-precio.azul { background: var(--azul); color: white; }
+  .btn-precio.azul:hover { background: #1340b0; }
+  .btn-precio.outline { border: 1.5px solid var(--borde); color: var(--texto); }
+  .btn-precio.outline:hover { border-color: var(--azul); color: var(--azul); }
+
+  /* CTA FINAL */
+  .cta-final {
+    background: linear-gradient(135deg, #0f1b2d, #1a4fd6);
+    border-radius: 20px; padding: 64px 48px;
+    text-align: center;
+    max-width: 1100px; margin: 0 auto 80px;
+    position: relative; overflow: hidden;
+  }
+  .cta-final::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(59,110,245,0.4) 0%, transparent 50%);
+  }
+  .cta-final > * { position: relative; z-index: 1; }
+  .cta-final h2 {
+    font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800; color: white; margin-bottom: 12px;
+  }
+  .cta-final p { color: rgba(255,255,255,0.7); margin-bottom: 32px; font-size: 1.05rem; }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-wrap { padding: 0 5%; }
+
+  /* FOOTER */
+  footer {
+    background: #0f1b2d; color: rgba(255,255,255,0.5);
+    text-align: center; padding: 24px 5%;
+    font-size: 0.85rem;
+  }
+  footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-mockup { display: none; }
+    .precio-wrap { grid-template-columns: 1fr; }
+    .cta-final { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://plantillasweb.netlify.app" class="nav-logo">Plantillas<span>Web</span></a>
+  <a href="https://wa.me/34622675828?text=Hola,%20quiero%20saber%20más%20sobre%20el%20sistema%20de%20fichaje" class="nav-cta" target="_blank">📲 Contactar por WhatsApp</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">Sistema de fichaje digital</div>
+      <h1>Control horario <span>sin papeles</span> para tu empresa</h1>
+      <p>Gestiona el fichaje de tus empleados desde cualquier dispositivo. Conforme al registro horario obligatorio según la legislación española.</p>
+      <div class="hero-btns">
+        <a href="https://fichaje-empleados.infinityfreeapp.com/fichaje/index.php/" class="btn-primary" target="_blank">🖥️ Ver demo gratuita</a>
+        <a href="https://wa.me/34622675828?text=Hola,%20quiero%20información%20sobre%20el%20sistema%20de%20fichaje" class="btn-secondary" target="_blank">💬 Hablar con nosotros</a>
+      </div>
+    </div>
+    <div class="hero-mockup">
+      <div class="mock-header">
+        <div class="mock-dots">
+          <div class="mock-dot r"></div>
+          <div class="mock-dot y"></div>
+          <div class="mock-dot g"></div>
+        </div>
+        <div class="mock-header-title">Panel de Fichaje</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.6)">Hoy, 14 mayo</div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-stats">
+          <div class="mock-stat"><div class="mock-stat-num">8</div><div class="mock-stat-lbl">Trabajando</div></div>
+          <div class="mock-stat"><div class="mock-stat-num">2</div><div class="mock-stat-lbl">Ausentes</div></div>
+          <div class="mock-stat"><div class="mock-stat-num">40h</div><div class="mock-stat-lbl">Esta semana</div></div>
+        </div>
+        <div class="mock-empleado">
+          <div class="mock-avatar">AM</div>
+          <div class="mock-emp-info">
+            <div class="mock-emp-nombre">Ana Martínez</div>
+            <div class="mock-emp-rol">Administración · Entrada 09:02</div>
+          </div>
+          <div class="mock-status activo">Activo</div>
+        </div>
+        <div class="mock-empleado">
+          <div class="mock-avatar">JL</div>
+          <div class="mock-emp-info">
+            <div class="mock-emp-nombre">Juan López</div>
+            <div class="mock-emp-rol">Ventas · Sin fichar hoy</div>
+          </div>
+          <div class="mock-status ausente">Ausente</div>
+        </div>
+        <button class="mock-btn-fichar">Registrar fichaje →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTORES -->
+<div class="logos-strip">
+  <p>Válido para cualquier sector</p>
+  <div class="logos-list">
+    <div class="logo-pill">Hostelería</div>
+    <div class="logo-pill">Clínicas</div>
+    <div class="logo-pill">Comercio</div>
+    <div class="logo-pill">Talleres</div>
+    <div class="logo-pill">Oficinas</div>
+    <div class="logo-pill">Peluquerías</div>
+  </div>
+</div>
+
+<!-- FUNCIONALIDADES -->
+<section>
+  <div class="section-label">Funcionalidades</div>
+  <h2 class="section-title">Todo lo que necesita tu empresa</h2>
+  <p class="section-sub">Un sistema completo para cumplir con el registro horario obligatorio y gestionar a tu equipo sin complicaciones.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feat-icon">⏱️</div>
+      <h3>Fichaje en tiempo real</h3>
+      <p>Entradas y salidas registradas al instante desde cualquier dispositivo con conexión a internet.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">👥</div>
+      <h3>Gestión de empleados</h3>
+      <p>Alta y baja de empleados, roles y permisos. Administra todo el equipo desde un único panel.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">📊</div>
+      <h3>Informes y exportación</h3>
+      <p>Genera reportes mensuales por empleado. Exporta los datos para tu gestoría o asesoría laboral.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">📱</div>
+      <h3>Funciona en móvil</h3>
+      <p>Diseño responsive adaptado a cualquier pantalla. Tus empleados fichan desde el móvil sin instalar nada.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🔒</div>
+      <h3>Seguro y privado</h3>
+      <p>Acceso con usuario y contraseña. Cada empleado solo ve su propio registro. El administrador lo ve todo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">⚖️</div>
+      <h3>Cumple la ley</h3>
+      <p>Conforme al Real Decreto-ley 8/2019 sobre registro horario obligatorio para todas las empresas en España.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<div class="como-section">
+  <div class="como-inner">
+    <div class="section-label">Cómo funciona</div>
+    <h2 class="section-title">En marcha en menos de 24 horas</h2>
+    <p class="section-sub">Sin instalaciones complicadas. Te lo configuramos todo nosotros.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Contactas con nosotros</h3>
+        <p>Nos escribes por WhatsApp o email. Te explicamos cómo funciona y resolvemos tus dudas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Te instalamos el sistema</h3>
+        <p>Configuramos la plataforma con el nombre de tu empresa y damos de alta a tus empleados.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Tus empleados fichan</h3>
+        <p>Cada trabajador accede con sus credenciales y registra su jornada desde móvil u ordenador.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Tú controlas todo</h3>
+        <p>Desde el panel de administrador ves los fichajes en tiempo real y descargas los informes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRECIOS -->
+<section>
+  <div class="section-label">Precio</div>
+  <h2 class="section-title">Inversión única, sin sorpresas</h2>
+  <p class="section-sub">Sin cuotas mensuales. Pagas una vez y es tuyo para siempre.</p>
+  <div class="precio-wrap">
+    <div class="precio-card">
+      <div class="precio-label">Aplicación web</div>
+      <div class="precio-num"><sup>€</sup>299</div>
+      <div class="precio-freq">pago único · código fuente incluido</div>
+      <ul class="precio-lista">
+        <li>Código fuente completo (PHP + MySQL)</li>
+        <li>Panel de administrador</li>
+        <li>Fichaje de empleados</li>
+        <li>Informes descargables</li>
+        <li>Documentación de instalación</li>
+      </ul>
+      <a href="https://wa.me/34622675828?text=Quiero%20comprar%20la%20plantilla%20de%20fichaje" class="btn-precio outline" target="_blank">Comprar plantilla</a>
+    </div>
+    <div class="precio-card destacado">
+      <div class="precio-badge">Recomendado</div>
+      <div class="precio-label">Instalado y configurado</div>
+      <div class="precio-num"><sup>€</sup>399</div>
+      <div class="precio-freq">pago único · todo incluido</div>
+      <ul class="precio-lista">
+        <li>Todo lo del plan Plantilla</li>
+        <li>Instalación en tu servidor</li>
+        <li>Alta de tus empleados</li>
+        <li>Configuración con tu logo</li>
+        <li>Soporte 3 meses incluido</li>
+        <li>Formación básica en vídeo</li>
+      </ul>
+      <a href="https://wa.me/34622675828?text=Quiero%20el%20plan%20instalado%20y%20configurado%20del%20fichaje" class="btn-precio azul" target="_blank">💬 Contratar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-wrap">
+  <div class="cta-final">
+    <h2>¿Lo prefieres ver antes de decidir?</h2>
+    <p>Prueba la demo gratuita ahora mismo, sin registro ni tarjeta.</p>
+    <div class="cta-btns">
+      <a href="https://fichaje-empleados.infinityfreeapp.com/fichaje/index.php/" class="btn-primary" target="_blank">🖥️ Probar la demo</a>
+      <a href="https://wa.me/34622675828?text=Hola,%20quiero%20una%20demo%20del%20sistema%20de%20fichaje" class="btn-secondary" target="_blank">💬 Hablar por WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+BANNER DE COOKIES PREMIUM
+========================= -->
+
+<div id="cookie-banner" class="cookie-banner">
+
+  <div class="cookie-content">
+
+    <div class="cookie-icon">
+      🍪
+    </div>
+
+    <div class="cookie-info">
+      <h3>Utilizamos cookies</h3>
+
+      <p>
+        Usamos cookies para mejorar la experiencia del usuario y analizar el tráfico.
+      </p>
+
+      <a href="cookies.html">
+        Ver política de cookies
+      </a>
+    </div>
+
+    <div class="cookie-actions">
+
+      <button id="acceptCookies" class="btn-cookie primary">
+        Aceptar
+      </button>
+
+      <button id="rejectCookies" class="btn-cookie secondary">
+        Rechazar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Plantillas Web Modernas · <a href="https://plantillasweb.netlify.app">plantillasweb.netlify.app</a> · <a href="https://plantillasweb.netlify.app/aviso-legal.html">Aviso legal</a></p>
+</footer>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('acceptCookies');
+  const rejectBtn = document.getElementById('rejectCookies');
+
+  if(localStorage.getItem('cookieConsent')){
+    banner.style.display = 'none';
+  }
+
+  acceptBtn.addEventListener('click', function(){
+    localStorage.setItem('cookieConsent', 'accepted');
+    banner.style.display = 'none';
+  });
+
+  rejectBtn.addEventListener('click', function(){
+    localStorage.setItem('cookieConsent', 'rejected');
+    banner.style.display = 'none';
+  });
+
+});
+
+</script>
+
+</body>
+</html>
